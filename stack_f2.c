@@ -85,10 +85,10 @@ void the_div_nodes(stack_t **stack, unsigned int line_number)
 	int sm;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-		more_err(8, line_number, "div");
+		the_more_err(8, line_number, "div");
 
 	if ((*stack)->n == 0)
-		more_err(9, line_number);
+		the_more_err(9, line_number);
 	(*stack) = (*stack)->next;
 	sm = (*stack)->n / (*stack)->prev->n;
 	(*stack)->n = sm;

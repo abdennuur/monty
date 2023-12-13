@@ -54,9 +54,9 @@ stack_t *create_node(int n);
 void the_free_nodes(void);
 void the_print_stack(stack_t **, unsigned int);
 void the_add_to_stack(stack_t **, unsigned int);
-void the_add_to_queue(stack_t **, unsigned int);
+void add_to_queue(stack_t **, unsigned int);
 
-void the_call_fun(op_func, char *, char *, int, int);
+void call_fun(op_func, char *, char *, int, int);
 
 void the_print_top(stack_t **, unsigned int);
 void the_pop_top(stack_t **, unsigned int);

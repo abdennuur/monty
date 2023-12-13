@@ -110,7 +110,7 @@ void the_find_func(char *opcode, char *value, int ln, int format)
 	{
 		if (strcmp(opcode, func_list[ix].opcode) == 0)
 		{
-			the_call_fun(func_list[ix].f, opcode, value, ln, format);
+			call_fun(func_list[ix].f, opcode, value, ln, format);
 			flg = 0;
 		}
 	}
@@ -120,7 +120,7 @@ void the_find_func(char *opcode, char *value, int ln, int format)
 
 
 /**
- * the_call_fun - Call required function
+ * call_fun - Call required function
  * @func: ptr to function to be called
  * @op: str representing opcode.
  * @val: str representing  numeric value.
@@ -128,7 +128,7 @@ void the_find_func(char *opcode, char *value, int ln, int format)
  * @format: Format specifier 0 ->stack.
  * if 1 -> queue.
  */
-void the_call_fun(op_func func, char *op, char *val, int ln, int format)
+void call_fun(op_func func, char *op, char *val, int ln, int format)
 {
 	stack_t *nd;
 	int flg;
@@ -153,7 +153,7 @@ void the_call_fun(op_func func, char *op, char *val, int ln, int format)
 		if (format == 0)
 			func(&nd, ln);
 		if (format == 1)
-			the_add_to_queue(&nd, ln);
+			add_to_queue(&nd, ln);
 	}
 	else
 		func(&head, ln);
